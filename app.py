@@ -1,6 +1,8 @@
 # Simple Python script with intentional errors for debugging/testing
 
 def calculate_average(numbers):
+    if not numbers:
+        return 0.0
     total = sum(numbers)
     # Error 1: ZeroDivisionError if list is empty
     return total / len(numbers)
@@ -19,7 +21,7 @@ def main():
     avg = calculate_average(numbers)
     
     # Bug 2: TypeError (can't concatenate str and float)
-    print("Result: " + avg)
+    print("Result: " + str(avg))
 
 if __name__ == "__main__":
     main()
